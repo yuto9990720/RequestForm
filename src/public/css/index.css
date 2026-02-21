@@ -1,0 +1,138 @@
+/* ======================
+   Base
+====================== */
+
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    box-shadow: none;
+}
+
+/* ======================
+   Title
+====================== */
+.page-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-family: serif;
+    color: #7a6a61;
+}
+
+/* ======================
+   Form Layout
+====================== */
+.form-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    width: 200px;
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.required {
+    color: #e57373;
+    margin-left: 4px;
+}
+
+/* right side */
+.form-content {
+    flex: 1;
+}
+
+/* flex for name & tel */
+.flex {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* gender */
+.gender {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.gender input {
+    margin-right: 6px;
+}
+
+/* ======================
+   Inputs
+====================== */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 14px;
+    color: #555;
+    box-sizing: border-box;
+}
+
+/* name fields */
+.form-content.flex > div {
+    width: 50%;
+}
+
+/* tel fields */
+.form-content.flex input[name^="tel"] {
+    width: 80px;
+    text-align: center;
+}
+
+.form-content.flex span {
+    color: #999;
+}
+
+/* textarea */
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* select arrow look */
+select {
+    appearance: none;
+    background: #f2f2f2;
+}
+
+/* ======================
+   Error
+====================== */
+.error {
+    color: #e57373;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* ======================
+   Button
+====================== */
+.submit-btn {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.submit-btn button {
+    background-color: #7a6a61;
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.submit-btn button:hover {
+    opacity: 0.9;
+}

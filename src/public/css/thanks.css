@@ -1,0 +1,70 @@
+/* ======================
+   Base
+====================== */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff !important;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    color: #7a6a61;
+}
+
+/* ======================
+   Container
+====================== */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ======================
+   Background Text
+====================== */
+.background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 180px;
+    font-family: serif;
+    color: rgba(122, 106, 97, 0.08); /* 薄く表示 */
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* ======================
+   Center Content
+====================== */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* メッセージ */
+.message {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* ======================
+   Home Button
+====================== */
+.home-btn {
+    display: inline-block;
+    background-color: #7a6a61;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 40px;
+    font-size: 14px;
+}
+
+.home-btn:hover {
+    opacity: 0.9;
+}

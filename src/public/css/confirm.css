@@ -1,0 +1,97 @@
+/* ======================
+   Base
+====================== */
+
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 20px;
+}
+
+/* ======================
+   Title
+====================== */
+.page-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-family: serif;
+    color: #7a6a61;
+}
+
+/* ======================
+   Table
+====================== */
+.confirm-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+.confirm-table th,
+.confirm-table td {
+    padding: 18px 20px;
+    font-size: 14px;
+    border: 1px solid #e5e0dc;
+    vertical-align: top;
+}
+
+/* 左側（項目名） */
+.confirm-table th {
+    width: 30%;
+    background-color: #b8a999; /* ブラウン系 */
+    color: #ffffff;
+    font-weight: normal;
+    text-align: left;
+}
+
+/* 右側（内容） */
+.confirm-table td {
+    background-color: #fff;
+    color: #6b5b53;
+}
+
+/* ======================
+   Button Area
+====================== */
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* ボタン間の余白 */
+    margin-top: 40px;
+}
+
+/* 送信ボタン */
+.submit-btn {
+    background-color: #7a6a61;
+    color: #fff;
+    border: none;
+    padding: 12px 50px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* 修正ボタン */
+.return-btn {
+    background: none;
+    border: none;
+    color: #7a6a61;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* hover */
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+.return-btn:hover {
+    opacity: 0.7;
+}
+
+body {
+    background-color: #fff !important;
+}

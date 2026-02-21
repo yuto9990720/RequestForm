@@ -1,0 +1,47 @@
+/* ======================
+   Base
+====================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f6f4;
+    color: #6b5b53;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+/* ======================
+   Header
+====================== */
+.header {
+    border-bottom: 1px solid #e5e0dc;
+    padding: 20px 0;
+}
+
+.header-title {
+    text-align: center;
+}
+
+.header-title h1 {
+    margin: 0;
+    font-family: serif;
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    color: #7a6a61;
+}
+
+/* ======================
+   Common reset
+====================== */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}

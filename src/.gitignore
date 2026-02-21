@@ -13,3 +13,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+# Docker MySQL data (do not commit)
+docker/mysql/data/
+docker/mysql/data/**
