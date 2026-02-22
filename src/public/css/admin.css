@@ -1,0 +1,512 @@
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    color: #6f655d;
+    background: #ffffff;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP",
+        "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+/* ===== Header ===== */
+.admin-header {
+    border-bottom: 1px solid #efe8e2;
+    background: #fff;
+}
+.admin-header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.brand {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #6f655d;
+}
+
+/* ===== Main ===== */
+.admin-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 22px 12px 0px;
+}
+.admin-title {
+    text-align: center;
+    margin: 22px 0 34px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #6f655d;
+}
+
+/* ===== Form ===== */
+.search {
+    margin-bottom: 22px;
+}
+.search__row {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.search__row--bottom {
+    margin-top: 14px;
+    justify-content: space-between;
+}
+.input {
+    height: 65px;
+    padding: 0 12px;
+    border: 1px solid #e7ded7;
+    border-radius: 2px;
+    background: #fbf9f7;
+    color: #6f655d;
+    outline: none;
+    min-width: 280px;
+}
+.input::placeholder {
+    color: #b3a79f;
+}
+.input--date {
+    width: 170px;
+    min-width: 160px;
+}
+
+.select-wrap {
+    position: relative;
+}
+.select {
+    height: 44px;
+    padding: 0 42px 0 16px;
+    border: 1px solid #e7ded7;
+    border-radius: 2px;
+    background: #fbf9f7;
+    color: #6f655d;
+    outline: none;
+    min-width: 160px;
+    appearance: none;
+}
+.select-wrap::after {
+    content: "▼";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    color: #b3a79f;
+    pointer-events: none;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    height: 44px;
+    padding: 0 18px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1;
+    transition: 0.15s;
+}
+
+.btn--primary {
+    background: #7a6a5f;
+    border-color: #7a6a5f;
+    color: #fff;
+    width: auto;
+    min-width: 70px;
+}
+.btn--primary:hover {
+    filter: brightness(0.95);
+}
+
+.btn--secondary {
+    background: #c9b6a8;
+    border-color: #c9b6a8;
+    color: #fff;
+    width: auto;
+    min-width: 70px;
+}
+.btn--secondary:hover {
+    filter: brightness(0.96);
+}
+
+.btn--export {
+    height: 30px;
+    padding: 0 14px;
+    background: #e9e2dc;
+    border-color: #e9e2dc;
+    color: #7a6a5f;
+}
+.btn--export:hover {
+    filter: brightness(0.97);
+}
+
+.btn--ghost {
+    height: 28px;
+    padding: 0 12px;
+    background: #fff;
+    border-color: #e7ded7;
+    color: #b3a79f;
+}
+.btn--ghost:hover {
+    background: #fbf9f7;
+}
+
+.btn--detail {
+    height: 28px;
+    padding: 0 16px;
+    background: #fff;
+    border: 1px solid #e7ded7;
+    color: #b3a79f;
+}
+.btn--detail:hover {
+    background: #fbf9f7;
+}
+
+/* ===== Table ===== */
+.admin-table {
+    margin-top: 14px;
+}
+.table {
+    border: 1px solid #e7ded7;
+    border-radius: 2px;
+    overflow: hidden;
+    background: #fff;
+}
+.table__head {
+    display: grid;
+    grid-template-columns: 160px 120px 240px 1fr 100px;
+    background: #7a6a5f;
+    color: #fff;
+    font-weight: 600;
+}
+.th {
+    padding: 18px 20px;
+    font-size: 18px;
+}
+.th--right {
+    text-align: right;
+}
+
+.table__row {
+    display: grid;
+    grid-template-columns: 160px 120px 240px 1fr 100px;
+    border-top: 1px solid #efe8e2;
+    align-items: center;
+    min-height: 66px;
+}
+.td {
+    padding: 18px 20px;
+    font-size: 18px;
+    color: #6f655d;
+}
+.td--right {
+    text-align: right;
+}
+
+/* ===== Pager ===== */
+.pager {
+    display: inline-flex;
+    gap: 0;
+    border: 1px solid #e7ded7;
+    border-radius: 2px;
+    overflow: hidden;
+    background: #fff;
+}
+.pager__btn,
+.pager__num {
+    width: 34px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #b3a79f;
+    border-right: 1px solid #e7ded7;
+    font-size: 12px;
+}
+.pager__num:last-child,
+.pager__btn:last-child {
+    border-right: 0;
+}
+
+.pager__num.is-active {
+    background: #7a6a5f;
+    color: #fff;
+}
+
+/* 入力・セレクトが縮められるようにする（折り返し防止） */
+.input,
+.select {
+    min-width: 0;
+}
+
+/* 文字入力だけは適度な幅を指定（大きすぎても小さすぎても崩れる） */
+.search__row .input[type="text"] {
+    width: 300px;
+}
+
+/* dateの右側にあるボタンを右へ寄せる */
+.input--date {
+    margin-right: auto;
+}
+
+/* =========================================================
+   要件対応パッチ（admin.css の末尾に追記）
+   1) search-row：一番大きい箱(=input 65px)に高さを統一
+   2) エクスポート＆ページャを少し大きく
+   3) 詳細ボタンが潰れないように列幅/ボタンサイズ調整
+   4) ヘッダー：FashionablyLateを中央、logoutを大きく
+   ========================================================= */
+
+/* ===== 1) search-row：高さ統一（入力の65px基準） ===== */
+:root {
+    --control-h: 65px; /* 一番大きい箱の高さ */
+}
+
+.search__row {
+    align-items: center;
+}
+
+/* input/select/button を同じ高さに揃える */
+.input,
+.select,
+.btn {
+    height: var(--control-h);
+}
+
+/* select の見た目（矢印位置も中央に合うよう） */
+.select {
+    padding: 0 46px 0 16px;
+    font-size: 16px;
+}
+.select-wrap::after {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+}
+
+/* ボタンの文字サイズも少し上げる */
+.btn {
+    font-size: 16px;
+    padding: 0 22px;
+}
+
+/* ===== 2) エクスポート＆ページャを大きく（1に付随） ===== */
+.btn--export {
+    height: 40px; /* 30 → 40 */
+    padding: 0 18px;
+    font-size: 15px;
+}
+
+/* ページャ全体を少し大きく */
+.pager__btn,
+.pager__num {
+    width: 42px; /* 34 → 42 */
+    height: 36px; /* 28 → 36 */
+    font-size: 14px; /* 12 → 14 */
+}
+
+/* ===== 3) 詳細の箱が潰れる問題 ===== */
+/* 右端列を広げる（100pxだと「詳細」が2行になりやすい） */
+.table__head,
+.table__row {
+    grid-template-columns: 160px 120px 240px 1fr 140px; /* 右端 100 → 140 */
+}
+
+/* 右端セル内でボタンが潰れないように */
+.td--right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* 詳細ボタンを押しやすく・1行固定に */
+.btn--detail {
+    height: 38px; /* 28 → 38 */
+    padding: 0 18px;
+    min-width: 80px; /* 横幅確保 */
+    font-size: 14px;
+    white-space: nowrap; /* 「詳 細」みたいな改行防止 */
+}
+
+/* ===== 4) ヘッダー中央寄せ + logoutを大きく ===== */
+/* 中央にブランド、右にlogout（左は空の領域でバランス） */
+.admin-header__inner {
+    position: relative;
+    justify-content: center; /* まず中央に寄せる */
+}
+
+/* ブランドを絶対中央に固定 */
+.brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px; /* 少し大きく */
+}
+
+/* logoutを右上に大きめ表示 */
+.btn--ghost {
+    height: 40px; /* 28 → 40 */
+    padding: 0 18px;
+    font-size: 15px;
+    border-width: 1px;
+    border-radius: 2px;
+}
+
+/* logoutフォームを右端に固定（ブランドは中央のまま） */
+.admin-header__inner form {
+    margin-left: auto;
+}
+
+/* ===== Hover（要件：各列にカーソルでhover） ===== */
+.table__row:hover {
+    background: #fbf9f7;
+}
+.table__row .td:hover {
+    background: #f6f0ea;
+}
+
+/* ===== Modal ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 9999;
+}
+.modal.is-open {
+    display: block;
+}
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+.modal__content {
+    position: relative;
+    width: min(820px, calc(100% - 32px));
+    margin: 80px auto;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #e7ded7;
+    padding: 22px 22px 18px;
+}
+.modal__close {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #e7ded7;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #6f655d;
+    font-size: 18px;
+    line-height: 1;
+}
+.modal__title {
+    margin: 0 0 16px;
+    font-size: 20px;
+    color: #6f655d;
+}
+.modal__dl {
+    margin: 0;
+}
+.modal__row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 14px;
+    padding: 10px 0;
+    border-top: 1px solid #efe8e2;
+}
+.modal__row:first-child {
+    border-top: 0;
+}
+.modal__row dt {
+    color: #7a6a5f;
+    font-weight: 600;
+}
+.modal__row dd {
+    margin: 0;
+    color: #6f655d;
+}
+.modal__row--detail dd {
+    white-space: pre-wrap;
+}
+.modal__actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ===== Laravel pagination(links()) が入るので最低限整える ===== */
+.pagination {
+    display: inline-flex;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.pagination li a,
+.pagination li span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 34px;
+    border: 1px solid #e7ded7;
+    border-radius: 2px;
+    text-decoration: none;
+    color: #b3a79f;
+    background: #fff;
+    font-size: 14px;
+    padding: 0 10px;
+}
+.pagination li.active span {
+    background: #7a6a5f;
+    border-color: #7a6a5f;
+    color: #fff;
+}
+.pagination li.disabled span {
+    opacity: 0.5;
+}
+
+/* でかすぎるので基準高さを44pxに戻す */
+:root {
+    --control-h: 44px;
+}
+
+/* inputだけ少し大きくしたいなら */
+.input {
+    height: 44px;
+}
+
+/* もし「一番大きいものに揃える」要件を守りつつ見た目を崩したくないなら
+   inputもselectもbtnも44pxで統一が一番安全 */
+.input,
+.select,
+.btn {
+    height: 44px;
+}
+
+/* 検索・リセットボタンの潰れ（改行）防止 */
+.search__row .btn--primary,
+.search__row .btn--secondary {
+    min-width: 110px; /* 横幅を確保（好みで 100〜130） */
+    white-space: nowrap; /* 「検\n索」「リ\nセット」を防ぐ */
+    padding: 0 22px; /* 余白も少し増やす */
+    flex: 0 0 auto; /* flexで潰されないように */
+}

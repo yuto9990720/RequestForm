@@ -23,7 +23,7 @@ class CreateNewUser implements CreatesNewUsers
     Validator::make($input, [
         'name' => ['required', 'string',],
         'email' => ['required', 'email', ],
-        'password' => ['required', 'confirmed', Password::defaults()],
+        'password' => ['required', Password::defaults()],
     ], [
         'name.required' => 'お名前を入力してください',
         'email.required' => 'メールアドレスを入力してください',
