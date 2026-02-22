@@ -47,6 +47,12 @@ class ContactController extends Controller
 
     public function thanks()
     {
-        return view('contact.thanks');
+        return view('contacts.thanks');
+    }
+
+    public function back(Request $request)
+    {
+        return redirect()->route('contacts.index')
+        ->withInput($request->all());
     }
 }

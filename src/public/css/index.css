@@ -14,7 +14,7 @@
 ====================== */
 .page-title {
     text-align: center;
-    font-size: 28px;
+    font-size: 35px;
     margin-bottom: 40px;
     font-family: serif;
     color: #7a6a61;
@@ -29,10 +29,11 @@
     margin-bottom: 24px;
 }
 
-.form-group label {
+.form-group > label {
     width: 200px;
-    font-size: 14px;
+    font-size: 18px;
     padding-top: 10px;
+    margin-right: 80px;
 }
 
 .required {
@@ -55,13 +56,25 @@
 /* gender */
 .gender {
     display: flex;
-    gap: 30px;
+    justify-content: flex-start;
     align-items: center;
     padding-top: 8px;
 }
 
+.gender label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 75px;
+    width: auto;
+    white-space: nowrap;
+}
+
+.gender label:last-child {
+    margin-right: 0;
+}
+
 .gender input {
-    margin-right: 6px;
+    margin-right: 4px;
 }
 
 /* ======================
@@ -87,7 +100,6 @@ textarea {
 
 /* tel fields */
 .form-content.flex input[name^="tel"] {
-    width: 80px;
     text-align: center;
 }
 
@@ -105,6 +117,21 @@ textarea {
 select {
     appearance: none;
     background: #f2f2f2;
+}
+
+.select-box {
+    position: relative;
+}
+
+.select-box::after {
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 17px;
+    color: #7a6a61;
+    pointer-events: none;
 }
 
 /* ======================

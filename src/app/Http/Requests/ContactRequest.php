@@ -35,9 +35,9 @@ class ContactRequest extends FormRequest
             'email' => ['required', 'email'],
 
            
-            'tel1' => ['required', 'digits_between:2,5'],
-            'tel2' => ['required', 'digits_between:2,5'],
-            'tel3' => ['required', 'digits_between:3,5'],
+            'tel1' => ['required', 'numeric', 'digits_between:2,5'],
+            'tel2' => ['required', 'numeric', 'digits_between:2,5'],
+            'tel3' => ['required', 'numeric', 'digits_between:3,5'],
 
            
             'address' => ['required', 'string'],
@@ -65,11 +65,14 @@ class ContactRequest extends FormRequest
             'email.email' => 'メールアドレスの形式で入力してください',
 
             'tel1.required' => '電話番号を入力してください',
-            'tel1.digits_between' => '電話番号は半角数字で入力してください',
+            'tel1.numeric' => '電話番号は半角数字で入力してください',
+            'tel1.digits_between' => '電話番号は5桁まで数字で入力してください',
             'tel2.required' => '電話番号を入力してください',
-            'tel2.digits_between' => '電話番号は半角数字で入力してください',
+            'tel2.numeric' => '電話番号は半角数字で入力してください',
+            'tel2.digits_between' => '電話番号は5桁まで数字で入力してください',
             'tel3.required' => '電話番号を入力してください',
-            'tel3.digits_between' => '電話番号は半角数字で入力してください',
+            'tel3.numeric' => '電話番号は半角数字で入力してください',
+            'tel3.digits_between' =>'電話番号は5桁まで数字で入力してください',
 
             'address.required' => '住所を入力してください',
 
