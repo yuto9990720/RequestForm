@@ -38,7 +38,7 @@ class AdminController extends Controller
             'contacts' => $contacts,
             'genders' => self::GENDERS,
             'categories' => self::CATEGORIES,
-            'filters' => $request->only(['keyword', 'email', 'gender', 'category', 'date']),
+            'filters' => $request->only(['keyword',  'gender', 'category', 'date']),
         ]);
     }
 
@@ -112,9 +112,7 @@ class AdminController extends Controller
     private function buildFilteredQuery(Request $request)
     {
         $q = Contact::query();
-
-        // 1) 名前（姓/名/フルネーム、完全一致/部分一致）
-        // keywordに「名前 or メール」を入れるUIでも良いが、要件が分かれているので email も別対応可能にしておく
+        
         $keyword = trim((string) $request->input('keyword', ''));
         if ($keyword !== '') {
             // 全角スペースを半角へ
@@ -122,8 +120,11 @@ class AdminController extends Controller
             $parts = array_values(array_filter(explode(' ', $normalized)));
 
             $q->where(function ($sub) use ($keyword, $parts) {
+
+                 $sub->where('email', 'like', "%{$keyword}%");
+
                 // 部分一致（姓・名）
-                $sub->where('last_name', 'like', "%{$keyword}%")
+                $sub->orWhere('last_name', 'like', "%{$keyword}%")
                     ->orWhere('first_name', 'like', "%{$keyword}%");
 
                 // フルネーム（スペースなし/あり）部分一致
@@ -141,13 +142,7 @@ class AdminController extends Controller
                 }
             });
         }
-
-        // 2) メールアドレス（完全一致/部分一致）
-        $email = trim((string) $request->input('email', ''));
-        if ($email !== '') {
-            $q->where('email', 'like', "%{$email}%");
-        }
-
+        
         // 3) 性別（デフォルト「性別」 / 全て・男性・女性・その他）
         $gender = $request->input('gender');
         // ''(未選択) or 'all' は絞り込みなし

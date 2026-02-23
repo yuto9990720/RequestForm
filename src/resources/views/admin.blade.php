@@ -9,18 +9,12 @@
         <main class="admin-main">
             <h2 class="admin-title">Admin</h2>
 
-            @if (session('success'))
-                <p style="text-align:center; color:#7a6a5f; margin: 0 0 10px;">{{ session('success') }}</p>
-            @endif
 
             {{-- 検索 --}}
             <form class="search" method="GET" action="{{ route('admin') }}">
                 <div class="search__row">
-                    <input class="input" type="text" name="keyword" placeholder="名前を入力してください（姓・名・フルネームOK）"
+                    <input class="input" type="text" name="keyword" placeholder="名前またはメールアドレスを入力してください（姓・名・フルネーム・メールOK）"
                         value="{{ $filters['keyword'] ?? '' }}">
-
-                    <input class="input" type="text" name="email" placeholder="メールアドレスを入力してください"
-                        value="{{ $filters['email'] ?? '' }}">
 
                     <div class="select-wrap">
                         <select class="select" name="gender">
@@ -117,7 +111,7 @@
                 </div>
             </section>
 
-            {{-- もう一度下にもページネーション（好み） --}}
+
 
         </main>
     </div>
