@@ -122,7 +122,7 @@
 
         <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
             <button class="modal__close js-close-modal" type="button" aria-label="close">×</button>
-            <h3 class="modal__title" id="modalTitle">お問い合わせ詳細</h3>
+            
 
             <div class="modal__body">
                 <dl class="modal__dl">
@@ -165,7 +165,7 @@
                 <form id="deleteForm" method="POST" action="">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn--secondary" type="submit" onclick="return confirm('削除しますか？')">削除</button>
+                    <button class="btn btn--danger" type="submit" onclick="return confirm('削除しますか？')">削除</button>
                 </form>
             </div>
         </div>

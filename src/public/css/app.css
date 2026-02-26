@@ -9,8 +9,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f6f4;
-    color: #6b5b53;
-    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    color: #8e7f73;
+    font-family: "Playfair Display", serif;
 }
 
 /* ======================
@@ -27,9 +27,7 @@ body {
 
 .header-title h1 {
     margin: 0;
-    font-family: serif;
     font-size: 32px;
-    font-weight: normal;
     letter-spacing: 0.5px;
     color: #7a6a61;
 }

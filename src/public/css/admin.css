@@ -27,9 +27,9 @@ body {
 .brand {
     margin: 0;
     font-size: 26px;
-    font-weight: 500;
     letter-spacing: 0.5px;
     color: #6f655d;
+    font-family: "Playfair Display", serif;
 }
 
 /* ===== Main ===== */
@@ -42,7 +42,7 @@ body {
     text-align: center;
     margin: 22px 0 34px;
     font-size: 30px;
-    font-weight: 500;
+    font-family: "Playfair Display", serif;
     color: #6f655d;
 }
 
@@ -392,64 +392,76 @@ body {
 .modal__overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.2);
 }
 .modal__content {
     position: relative;
-    width: min(820px, calc(100% - 32px));
+    width: min(1000px, calc(100% - 32px));
     margin: 80px auto;
+    height: 80%;
     background: #fff;
-    border-radius: 4px;
-    border: 1px solid #e7ded7;
-    padding: 22px 22px 18px;
+    border-radius: 2px;
+    border: 1px solid #cbb9ad;
+    padding: 60px 70px 55px;
 }
 .modal__close {
     position: absolute;
     right: 12px;
     top: 10px;
-    width: 34px;
-    height: 34px;
-    border: 1px solid #e7ded7;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #cbb9ad;
     background: #fff;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 999px;
     color: #6f655d;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1;
 }
-.modal__title {
-    margin: 0 0 16px;
-    font-size: 20px;
-    color: #6f655d;
-}
+
 .modal__dl {
     margin: 0;
+    text-align: center;
 }
 .modal__row {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 14px;
-    padding: 10px 0;
-    border-top: 1px solid #efe8e2;
+    display: block;
+    padding: 18px 0;
 }
 .modal__row:first-child {
     border-top: 0;
 }
 .modal__row dt {
-    color: #7a6a5f;
-    font-weight: 600;
+    color: #6f655d;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 8px;
 }
 .modal__row dd {
     margin: 0;
     color: #6f655d;
+    font-size: 20px;
 }
 .modal__row--detail dd {
     white-space: pre-wrap;
+    font-size: 20px;
+    line-height: 1.8;
 }
 .modal__actions {
-    margin-top: 18px;
+    margin-top: 60px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+}
+
+.btn--danger {
+    background: #c6452d;
+    border-color: #c6452d;
+    color: #fff;
+    height: 48px;
+    min-width: 110px;
+    font-size: 18px;
+}
+.btn--danger:hover {
+    filter: brightness(0.95);
 }
 
 /* ===== Laravel pagination(links()) が入るので最低限整える ===== */
@@ -509,4 +521,90 @@ body {
     white-space: nowrap; /* 「検\n索」「リ\nセット」を防ぐ */
     padding: 0 22px; /* 余白も少し増やす */
     flex: 0 0 auto; /* flexで潰されないように */
+}
+
+/* =========================
+   Modal 最終上書き（完成イメージ寄せ）
+   - 横並び(dt左 / dd右)
+   - 全体は中央寄せ
+   - 文字を大きく
+========================= */
+
+/* タイトルを表示＆中央 */
+.modal__title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px 0 50px;
+    color: #6f655d;
+}
+
+/* modal内の中身ブロックを中央に置く */
+.modal__body {
+    display: flex;
+    justify-content: center;
+}
+
+/* dlの幅を固定して中央寄せ（完成イメージの“中央にまとまる感じ”） */
+.modal__dl {
+    width: min(720px, 100%);
+    margin: 0 auto;
+}
+
+/* 縦並び化してしまったCSSを確実に打ち消すため important を付ける */
+.modal__row {
+    display: grid !important; /* ← block にされても戻す */
+    grid-template-columns: 260px 1fr; /* 左：ラベル / 右：値 */
+    column-gap: 60px;
+    align-items: center;
+    padding: 18px 0;
+    text-align: left; /* 中央寄せを無効化 */
+}
+
+/* 文字を大きく */
+.modal__row dt,
+.modal__row dd {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* ラベルは太字 */
+.modal__row dt {
+    font-weight: 700;
+    color: #7a6a5f;
+}
+
+/* ddの余白を消す */
+.modal__row dd {
+    margin: 0;
+    color: #6f655d;
+}
+
+/* お問い合わせ内容は複数行なので上揃え */
+.modal__row--detail {
+    align-items: start;
+}
+.modal__row--detail dd {
+    white-space: pre-wrap;
+    line-height: 1.8;
+}
+
+/* 削除ボタンを中央 */
+.modal__actions {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 赤ボタン */
+.btn--danger {
+    background: #c6452d;
+    border: 1px solid #c6452d;
+    color: #fff;
+    height: 50px;
+    min-width: 120px;
+    font-size: 18px;
+}
+.btn--danger:hover {
+    filter: brightness(0.95);
 }
